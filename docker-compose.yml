@@ -3,15 +3,14 @@ services:
   talentmatch-frontend:
     image: danieldrv/talentmatch-frontend:latest
     ports:
-      - "4201:4200"
+      - "4200:4200"
     networks:
       - app-network
 
   api-gateway:
-    image: danieldrv/talentmatch-api-gateway:latest
-  #  build:
-   #   context: .
-    #  dockerfile: ./api-gateway/Dockerfile
+    build:
+      context: .
+      dockerfile: ./api-gateway/Dockerfile
     ports:
       - "8080:8080"
     depends_on:
@@ -23,7 +22,9 @@ services:
       - app-network
 
   user-service:
-    image: danieldrv/talentmatch-user-service:latest
+    build:
+      context: .
+      dockerfile: ./user-service/Dockerfile
     ports:
       - "8082:8082"
     depends_on:
@@ -33,10 +34,9 @@ services:
     restart: unless-stopped
 
   candidate-skill-service:
-    image: danieldrv/talentmatch-candidate-skill-service:latest
- #   build:
-  #    context: .
-   #   dockerfile: ./candidateSkill-service/Dockerfile
+    build:
+      context: .
+      dockerfile: ./candidateSkill-service/Dockerfile
     ports:
       - "8081:8081"
     depends_on:
@@ -46,7 +46,6 @@ services:
     restart: unless-stopped
 
   projects:
-  #  image: danieldrv/talentmatch-projects:latest
     build:
       context: .
       dockerfile: ./projects/Dockerfile

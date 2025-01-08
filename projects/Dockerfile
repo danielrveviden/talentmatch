@@ -12,7 +12,7 @@ WORKDIR /app/projects
 RUN --mount=type=cache,target=/root/.m2 mvn dependency:go-offline -B
 
 # Construir el JAR del módulo
-RUN --mount=type=cache,target=/root/.m2 mvn clean package -DskipTests
+RUN --mount=type=cache,target=/root/.m2 mvn clean package
 
 # Etapa 2: Imagen de ejecución
 FROM eclipse-temurin:17-jre
