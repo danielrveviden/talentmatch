@@ -9,7 +9,6 @@ import com.example.candidateSkillService.entity.Skill;
 import com.example.candidateSkillService.repository.CandidateRepository;
 import com.example.candidateSkillService.repository.SkillRepository;
 import com.example.candidateSkillService.service.CandidateService;
-import com.example.candidateSkillService.service.CandidateSkillService;
 import com.example.candidateSkillService.utils.ConvertDTO;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 public class CandidateServiceImpl implements CandidateService {
@@ -27,8 +25,6 @@ public class CandidateServiceImpl implements CandidateService {
     @Autowired
     private CandidateRepository candidateRepository;
 
-    @Autowired
-    private CandidateSkillService candidateSkillService;
 
     @Autowired
     private SkillRepository skillRepository;

@@ -30,8 +30,6 @@ class CandidateServiceImplTest {
     @InjectMocks
     private CandidateServiceImpl candidateService;
 
-    private CandidateSkillServiceImpl candidateSkillService;
-
     private Candidate candidate;
     private CandidateDTO candidateDTO;
     private CandidateSkillDTO candidateSkillDTO;
